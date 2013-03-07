@@ -1,0 +1,21 @@
+{
+  "id" : "mysql",
+  "name" : "mysql",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes" : {
+    "mysql": {
+      "server_root_password": "root",
+      "server_repl_password": "replication",
+      "server_debian_password": "debian",
+      "reload_action": "none",
+      "tunable": {
+        "log_bin": "mysql-bin",
+        "binlog_format": "MIXED",
+        "relay_log": "mysql-relay",
+        "log_slave_updates" : true
+      }
+    }
+  },
+  "run_list": [ "recipe[mysql::server]" ]
+}
