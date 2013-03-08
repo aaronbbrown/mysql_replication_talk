@@ -3,12 +3,26 @@
   "name" : "mysql",
   "json_class": "Chef::Role",
   "chef_type": "role",
-  "default_attributes" : {
+  "override_attributes": {
     "mysql": {
+      "server": {
+        "packages": ["percona-server-server-5.5"]
+      },
+      "client": {
+        "packages": ["percona-server-client-5.5"]
+      }
+    }
+  },
+ 
+  "default_attributes" : {
+    "mysql" : {
+      "use_upstart": false,
       "server_root_password": "root",
+      "bind_address" : "0.0.0.0",
       "server_repl_password": "replication",
       "server_debian_password": "debian",
-      "reload_action": "none",
+      "reload_action": "restart",
+      "allow_remote_root": true,
       "tunable": {
         "log_bin": "mysql-bin",
         "binlog_format": "MIXED",
@@ -17,5 +31,7 @@
       }
     }
   },
-  "run_list": [ "recipe[mysql::server]" ]
+  "run_list": [ "recipe[apt]",
+                "recipe[mysql::percona_repo]",
+                "recipe[mysql::server]" ]
 }

@@ -3,7 +3,12 @@
 
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'mysql'
+
+cookbook 'mysql',
+  :git => 'git://github.com/9minutesnooze/mysql.git',
+  :ref => 'fix_percona_repo'
+
+cookbook 'apt'
 # cookbook 'chef-client'
 
 # cookbook 'apache2', '>= 1.0.0'

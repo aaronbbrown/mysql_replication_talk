@@ -43,7 +43,7 @@ GEM
     mixlib-config (1.1.2)
     mixlib-log (1.4.1)
     mixlib-shellout (1.1.0)
-    mysql (2.9.1)
+    mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.2.2)
@@ -60,6 +60,7 @@ GEM
       mixlib-shellout
       systemu
       yajl-ruby
+    random-word (1.3.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sequel (3.45.0)
@@ -81,6 +82,7 @@ PLATFORMS
 
 DEPENDENCIES
   librarian-chef
-  mysql
+  mysql2
+  random-word
   sequel
   vagrant (>= 1.0.6)
