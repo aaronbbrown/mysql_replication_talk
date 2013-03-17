@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-roles = %w[mysql1 mysql2 mysql3 mysql4]
+roles = %w[mysql1 mysql2 mysql3 mysql4 recovery]
 
 Vagrant::Config.run do |config|
   roles.each_with_index do |role,i|
