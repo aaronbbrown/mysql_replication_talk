@@ -1,9 +1,11 @@
-== Prerequisites ==
+Prerequisites
+=============
 * VirtualBox
-* Ruby
+* Ruby/RubyGems
 * MySQL client libraries (to install mysql2 gem)
 
-== To Install ==
+To Install
+==========
 ```
 git clone git://github.com/9minutesnooze/mysql_replication_talk.git
 gem install bundler
