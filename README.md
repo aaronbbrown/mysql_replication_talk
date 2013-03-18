@@ -8,6 +8,7 @@
 git clone git://github.com/9minutesnooze/mysql_replication_talk.git
 gem install bundler
 bundle install
+bundle exec librarian-chef install
 bundle exec vagrant up
 ```
 
